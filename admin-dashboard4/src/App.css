@@ -1,0 +1,40 @@
+/* 작은 화면을 위한 반응형 레이아웃 */
+@media (max-width: 768px) {
+  #App {
+    flex-direction: column-reverse;
+  }
+
+  .ant-layout-sider {
+    display: none;
+  }
+
+  .ant-layout {
+    margin-left: 0;
+  }
+
+  .ant-layout-header {
+    padding: 8px 16px;
+  }
+
+  .ant-card {
+    margin-bottom: 16px;
+  }
+
+  /* 화면 */
+  .ant-table {
+    overflow-x: auto;
+  }
+  
+  .ant-table {
+    min-width: 100%;
+  }
+
+  
+}
+
+.scrollable-content{
+  max-height: fit-content; /* 원하는 높이로 조정해주세요 */
+  max-width: fit-content;
+  overflow-x: auto;
+  overflow-y: auto;
+}

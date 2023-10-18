@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Kakao 지도 시작하기</title>
+</head>
+
+<body>
+    <div id="map" style="width:500px;height:400px;"></div>
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=441413a4d8349b6ffc6a26b17d8dfd43"></script>
+    <script>
+        var container = document.getElementById('map');
+        var options = {
+            level: 3
+        };
+        //var map = new kakao.maps.Map(container, options);
+
+        var marker;
+
+        function accessToGeo(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+
+            var center = new kakao.maps.LatLng(latitude, longitude);
+
+            // options 객체의 center 속성 업데이트
+            options.center = center;
+
+            // 맵 재생성
+            var map = new kakao.maps.Map(container, options);
+
+            if (marker) {
+                marker.setMap(null);
+            }
+
+            // 새로운 마커 생성
+            marker = new kakao.maps.Marker({
+                position: center,
+                map: map
+            });
+        }
+
+        function askForLocation() {
+            navigator.geolocation.getCurrentPosition(accessToGeo);
+        }
+
+        askForLocation();
+
+
+
+    </script>
+
+
+</body>
+
+</html>

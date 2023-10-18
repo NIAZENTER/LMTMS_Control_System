@@ -1,0 +1,25 @@
+# huconn_lmtms dependencies
+/huconn_lmtms/node_modules
+/huconn_lmtms/.pnp
+
+# huconn_lmtms testing
+/huconn_lmtms/coverage
+
+# huconn_lmtms production
+/huconn_lmtms/build
+
+.pnp.js
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# DHCHO ADD
+/material-ui
